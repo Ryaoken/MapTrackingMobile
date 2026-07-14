@@ -1838,11 +1838,47 @@ body {
                         });
                     }
                 }
-        map.addControl(new L.Control.Search({
-            layer: layer_Venue_web_1,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'Search Text'}));
+       var searchControl = new L.Control.Search({
+    layer: layer_Venue_web_1,
+    initial: false,
+    hideMarkerOnCollapse: true,
+    propertyName: 'Search Text',
+    zoom: 17,
+
+    moveToLocation: function(latlng, title, map) {
+        map.flyTo(latlng, 17, {
+            animate: true,
+            duration: 0.8
+        });
+    }
+});
+
+map.addControl(searchControl);
+
+searchControl.on('search:locationfound', function(e) {
+    var layer = e.layer;
+
+    if (layer && layer.getLatLng) {
+        map.flyTo(layer.getLatLng(), 17, {
+            animate: true,
+            duration: 0.8
+        });
+    } else if (layer && layer.getBounds) {
+        map.fitBounds(layer.getBounds(), {
+            maxZoom: 17,
+            padding: [40, 40]
+        });
+    } else if (e.latlng) {
+        map.flyTo(e.latlng, 17, {
+            animate: true,
+            duration: 0.8
+        });
+    }
+
+    if (layer && layer.openPopup) {
+        layer.openPopup();
+    }
+});
         if (typeof url === 'undefined') {
             document.getElementsByClassName('search-button')[0].className += ' fa fa-binoculars';
         } else {
