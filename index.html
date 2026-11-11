@@ -38,9 +38,9 @@
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-search.js"></script>
         <script src="data/BluePath_1.js"></script>
-        <script src="data/Yellow_2.js"></script>
-        <script src="data/Red_3.js"></script>
-        <script src="data/Purp_4.js"></script>
+        <script src="data/YellowPath_2.js"></script>
+        <script src="data/RedPath_3.js"></script>
+        <script src="data/PurplePath_4.js"></script>
         <script src="data/Venue_web_5.js"></script>
         <script>
         var highlightLayer;
@@ -50,7 +50,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[50.895597445913886,-1.5325061415387355],[51.90492054189007,1.0160409034683122]]);
+        }).fitBounds([[49.82877083295667,-5.166693682840113],[53.680307965370964,4.641840128720723]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -273,7 +273,7 @@
         });
         bounds_group.addLayer(layer_BluePath_1);
         map.addLayer(layer_BluePath_1);
-        function pop_Yellow_2(feature, layer) {
+        function pop_YellowPath_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -334,9 +334,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Yellow_2_0() {
+        function style_YellowPath_2_0() {
             return {
-                pane: 'pane_Yellow_2',
+                pane: 'pane_YellowPath_2',
                 opacity: 1,
                 color: 'rgba(244,255,0,0.7)',
                 dashArray: '',
@@ -347,21 +347,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Yellow_2');
-        map.getPane('pane_Yellow_2').style.zIndex = 402;
-        map.getPane('pane_Yellow_2').style['mix-blend-mode'] = 'normal';
-        var layer_Yellow_2 = new L.geoJson(json_Yellow_2, {
+        map.createPane('pane_YellowPath_2');
+        map.getPane('pane_YellowPath_2').style.zIndex = 402;
+        map.getPane('pane_YellowPath_2').style['mix-blend-mode'] = 'normal';
+        var layer_YellowPath_2 = new L.geoJson(json_YellowPath_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Yellow_2',
-            layerName: 'layer_Yellow_2',
-            pane: 'pane_Yellow_2',
-            onEachFeature: pop_Yellow_2,
-            style: style_Yellow_2_0,
+            dataVar: 'json_YellowPath_2',
+            layerName: 'layer_YellowPath_2',
+            pane: 'pane_YellowPath_2',
+            onEachFeature: pop_YellowPath_2,
+            style: style_YellowPath_2_0,
         });
-        bounds_group.addLayer(layer_Yellow_2);
-        map.addLayer(layer_Yellow_2);
-        function pop_Red_3(feature, layer) {
+        bounds_group.addLayer(layer_YellowPath_2);
+        map.addLayer(layer_YellowPath_2);
+        function pop_RedPath_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -377,6 +377,30 @@
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['deviceId'] !== null ? autolinker.link(String(feature.properties['deviceId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['deviceName'] !== null ? autolinker.link(String(feature.properties['deviceName']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['segmentId'] !== null ? autolinker.link(String(feature.properties['segmentId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['startTime'] !== null ? autolinker.link(String(feature.properties['startTime']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['endTime'] !== null ? autolinker.link(String(feature.properties['endTime']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['durationMin'] !== null ? autolinker.link(String(feature.properties['durationMin']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['pointCount'] !== null ? autolinker.link(String(feature.properties['pointCount']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lengthM'] !== null ? autolinker.link(String(feature.properties['lengthM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['begin'] !== null ? autolinker.link(String(feature.properties['begin']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -390,30 +414,6 @@
                     <tr>\
                         <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['deviceId'] !== null ? autolinker.link(String(feature.properties['deviceId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['deviceName'] !== null ? autolinker.link(String(feature.properties['deviceName']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['segmentId'] !== null ? autolinker.link(String(feature.properties['segmentId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['startTime'] !== null ? autolinker.link(String(feature.properties['startTime']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['endTime'] !== null ? autolinker.link(String(feature.properties['endTime']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['durationMin'] !== null ? autolinker.link(String(feature.properties['durationMin']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['pointCount'] !== null ? autolinker.link(String(feature.properties['pointCount']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['lengthM'] !== null ? autolinker.link(String(feature.properties['lengthM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -422,34 +422,34 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Red_3_0() {
+        function style_RedPath_3_0() {
             return {
-                pane: 'pane_Red_3',
+                pane: 'pane_RedPath_3',
                 opacity: 1,
-                color: 'rgba(255,29,0,0.7)',
+                color: 'rgba(183,72,75,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 4.0,
+                weight: 1.0,
                 fillOpacity: 0,
                 interactive: false,
             }
         }
-        map.createPane('pane_Red_3');
-        map.getPane('pane_Red_3').style.zIndex = 403;
-        map.getPane('pane_Red_3').style['mix-blend-mode'] = 'normal';
-        var layer_Red_3 = new L.geoJson(json_Red_3, {
+        map.createPane('pane_RedPath_3');
+        map.getPane('pane_RedPath_3').style.zIndex = 403;
+        map.getPane('pane_RedPath_3').style['mix-blend-mode'] = 'normal';
+        var layer_RedPath_3 = new L.geoJson(json_RedPath_3, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Red_3',
-            layerName: 'layer_Red_3',
-            pane: 'pane_Red_3',
-            onEachFeature: pop_Red_3,
-            style: style_Red_3_0,
+            dataVar: 'json_RedPath_3',
+            layerName: 'layer_RedPath_3',
+            pane: 'pane_RedPath_3',
+            onEachFeature: pop_RedPath_3,
+            style: style_RedPath_3_0,
         });
-        bounds_group.addLayer(layer_Red_3);
-        map.addLayer(layer_Red_3);
-        function pop_Purp_4(feature, layer) {
+        bounds_group.addLayer(layer_RedPath_3);
+        map.addLayer(layer_RedPath_3);
+        function pop_PurplePath_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -504,9 +504,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Purp_4_0() {
+        function style_PurplePath_4_0() {
             return {
-                pane: 'pane_Purp_4',
+                pane: 'pane_PurplePath_4',
                 opacity: 1,
                 color: 'rgba(180,0,255,0.7)',
                 dashArray: '',
@@ -517,20 +517,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Purp_4');
-        map.getPane('pane_Purp_4').style.zIndex = 404;
-        map.getPane('pane_Purp_4').style['mix-blend-mode'] = 'normal';
-        var layer_Purp_4 = new L.geoJson(json_Purp_4, {
+        map.createPane('pane_PurplePath_4');
+        map.getPane('pane_PurplePath_4').style.zIndex = 404;
+        map.getPane('pane_PurplePath_4').style['mix-blend-mode'] = 'normal';
+        var layer_PurplePath_4 = new L.geoJson(json_PurplePath_4, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Purp_4',
-            layerName: 'layer_Purp_4',
-            pane: 'pane_Purp_4',
-            onEachFeature: pop_Purp_4,
-            style: style_Purp_4_0,
+            dataVar: 'json_PurplePath_4',
+            layerName: 'layer_PurplePath_4',
+            pane: 'pane_PurplePath_4',
+            onEachFeature: pop_PurplePath_4,
+            style: style_PurplePath_4_0,
         });
-        bounds_group.addLayer(layer_Purp_4);
-        map.addLayer(layer_Purp_4);
+        bounds_group.addLayer(layer_PurplePath_4);
+        map.addLayer(layer_PurplePath_4);
         function pop_Venue_web_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -4431,6 +4431,982 @@
             }
                     break;
                 case 'St Anne\'s Parish Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St James Church Parish Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Countesthorpe Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Coventry Hearsall Golf Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Knightwood Leisure Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Hazelwood Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Harpenden Common Golf Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Kitson Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Saviour\'s, Wendall Park':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Crofton Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Chandler\'s Ford Methodist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Pamber Heath War Memorial':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Vera Fletcher Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Kingsdown Methodist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'The Generation Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Bernadette\'s Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Andrew\'s Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Bethany Baptist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Ise Valley Pavilion':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St George\'s Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Nicholas\' Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Ashtead Peace Memorial':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Thomas Law Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Church of the Resurrection':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Downend Folk House':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Staines & Laleham Sports Association':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Banstead Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Helen\'s Church, North Kensington':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Welwyn Garden City Golf Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Robinswood Hill Social Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'The Olney Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Nork Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Colehill Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Etheldread\'s Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Fleet URC Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'The Ladygate Bowls Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Faith & St Laurence':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Our Lady of the Immaculate Conception Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Woodley Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Drummond Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Uxbridge Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Nicholas Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Pinner Methodist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Wootton Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Bromham Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Dudley Kingswinford Rugby Football Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,29,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Chads Parish Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,29,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'The Oakfield Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Blunden Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'All Saints Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Thomas More Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Peter\'s C of E Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(180,0,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Old Basing Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Penylan Baptist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St John\'s Church Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Columba\'s C of E Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Sillhill Football Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Paxcroft Mead Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Redcliffe Bay Hill':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Surbiton Racket & Fitness':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Emsworth Sports & Social Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Upper Ettingshall Methodist Church':
                     return {
                 pane: 'pane_Venue_web_5',
                 radius: 8.0,
