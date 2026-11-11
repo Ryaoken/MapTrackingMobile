@@ -50,7 +50,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[49.82877083295667,-5.166693682840113],[53.680307965370964,4.641840128720723]]);
+        }).fitBounds([[50.63131961187385,-4.199427053938872],[52.85660700980204,1.4632811310751717]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -426,11 +426,11 @@
             return {
                 pane: 'pane_RedPath_3',
                 opacity: 1,
-                color: 'rgba(183,72,75,1.0)',
+                color: 'rgba(255,29,0,0.7)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 4.0,
                 fillOpacity: 0,
                 interactive: false,
             }
@@ -488,7 +488,8 @@
                         <td colspan="2">' + (feature.properties['pointCount'] !== null ? autolinker.link(String(feature.properties['pointCount']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['lengthM'] !== null ? autolinker.link(String(feature.properties['lengthM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">lengthM</th>\
+                        <td>' + (feature.properties['lengthM'] !== null ? autolinker.link(String(feature.properties['lengthM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -547,7 +548,7 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Venue Name</th>\
-                        <td>' + (feature.properties['Venue Name'] !== null ? autolinker.link(String(feature.properties['Venue Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Venue Name">' + (feature.properties['Venue Name'] !== null ? autolinker.link(String(feature.properties['Venue Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Town</th>\
@@ -603,7 +604,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(48,18,59,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Beaufort Community Centre':
@@ -619,7 +620,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Bersted Park Communty Centre':
@@ -635,7 +636,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'BS14 Social Club':
@@ -651,7 +652,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Cheam Social Club':
@@ -667,7 +668,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Christ the King Catholic Church':
@@ -683,7 +684,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Cove Baptist Church':
@@ -699,7 +700,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Croft Court Hotel':
@@ -715,7 +716,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Four Oaks Methodist Church':
@@ -731,7 +732,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Great Wyrley Methodist Church':
@@ -747,7 +748,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Irthlingborough Cricket Club':
@@ -763,7 +764,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'North Baddesley Village Hall':
@@ -779,7 +780,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Pagham Village Hall':
@@ -795,7 +796,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Parkes Hall Social Club':
@@ -811,7 +812,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Perry Beeches Baptist Church':
@@ -827,7 +828,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Portfield Community Centre':
@@ -843,7 +844,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Priory Park Community Centre':
@@ -859,7 +860,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Romsey Comrades Club':
@@ -875,7 +876,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Stow Park Lawn Tennis Club':
@@ -891,7 +892,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Tabernacle and Pentecostal Church':
@@ -907,7 +908,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Hollymoor Centre':
@@ -923,7 +924,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Shirley Centre':
@@ -939,7 +940,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Totton and Eling Community Centre':
@@ -955,7 +956,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Whetstone Memorial Hall':
@@ -971,7 +972,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Yeovil Ex Services & Social Club':
@@ -987,7 +988,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Yew Tree & Tamebridge Community Centre':
@@ -1003,7 +1004,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Holy Trinity Catholic Church':
@@ -1019,7 +1020,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Lawrence Church':
@@ -1035,7 +1036,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Cedar Barn Hall':
@@ -1051,7 +1052,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Morgan Centre':
@@ -1067,7 +1068,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Gabriel\'s Hall':
@@ -1083,7 +1084,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Carterton Community Centre':
@@ -1099,7 +1100,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'East Oakley Village Hall':
@@ -1115,7 +1116,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Langley Hall Social Club':
@@ -1131,7 +1132,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Chineham Village Hall':
@@ -1147,7 +1148,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Milton Methodist Church':
@@ -1163,7 +1164,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Saviour\'s Church Hall':
@@ -1179,7 +1180,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Priory Methodist Church':
@@ -1195,7 +1196,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Andrews Church':
@@ -1211,7 +1212,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Simon\'s Church':
@@ -1227,7 +1228,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Catholic Church Community Hall':
@@ -1243,7 +1244,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Bushmead Commuinty Hub':
@@ -1259,7 +1260,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Goldington Reading & Recreation Rooms':
@@ -1275,7 +1276,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Our Lady of the Rosary RC Church':
@@ -1291,7 +1292,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Alban the Martyr\'s Church Hall':
@@ -1307,7 +1308,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Katherine\'s Parish Centre':
@@ -1323,7 +1324,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Beaufort Community Centre':
@@ -1339,7 +1340,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Ararat Baptist Church':
@@ -1355,7 +1356,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Holy Trinity Church and Parish Centre':
@@ -1371,7 +1372,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Narborough Parish Centre':
@@ -1387,7 +1388,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St John Divine Church & Community Centre':
@@ -1403,7 +1404,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mark\'s Church Hall':
@@ -1419,7 +1420,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Beacon Church Centre':
@@ -1435,7 +1436,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Branksome Centre':
@@ -1451,7 +1452,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Green Heath Progressive Working Men\'s Club':
@@ -1467,7 +1468,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Pewsham Community Centre':
@@ -1483,7 +1484,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Chawn Hill Church':
@@ -1499,7 +1500,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Pedmore Cricket Club':
@@ -1515,7 +1516,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'West Totton Community Centre':
@@ -1531,7 +1532,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Mead Vale Community Hall':
@@ -1547,7 +1548,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Wylde Green United Reform Church':
@@ -1563,7 +1564,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Church of St Anne':
@@ -1579,7 +1580,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Emmanuel Church Hall':
@@ -1595,7 +1596,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Weston favell Parish Hall':
@@ -1611,7 +1612,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Colden Common Community Centre':
@@ -1627,7 +1628,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Knowle Village Hall':
@@ -1643,7 +1644,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Benedict\'s Church':
@@ -1659,7 +1660,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mary\'s, West Kensington Church Hall':
@@ -1675,7 +1676,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Rhiwbina Recreation Club':
@@ -1691,7 +1692,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Pontprennau Community Church Centre':
@@ -1707,7 +1708,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Whitestone Community Centre':
@@ -1723,7 +1724,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Alton Community Centre':
@@ -1739,7 +1740,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Anne\'s Neighbourhood Centre & Church':
@@ -1755,7 +1756,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Paul\'s Church':
@@ -1771,7 +1772,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Our Lady of Lourdes':
@@ -1787,7 +1788,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Putnoe Heights Church Hall':
@@ -1803,7 +1804,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Portchester Community Centre':
@@ -1819,7 +1820,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Merchistoun Hall':
@@ -1835,7 +1836,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Kensal Rise Catholic Church':
@@ -1851,7 +1852,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Cardiff Golf Club':
@@ -1867,7 +1868,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Oak Farm Library':
@@ -1883,7 +1884,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Townhill Farm Community Centre':
@@ -1899,7 +1900,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Barnabas Centre':
@@ -1915,7 +1916,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Brixworth Village Hall':
@@ -1931,7 +1932,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Church of the Ascension':
@@ -1947,7 +1948,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Horton Heath Community Centre':
@@ -1963,7 +1964,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Valley Park Community Centre':
@@ -1979,7 +1980,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Flitwick Village Hall':
@@ -1995,7 +1996,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Emmanuel Church Hall, Tolworth':
@@ -2011,7 +2012,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Emmanuel Church Hall, Wylde Green':
@@ -2027,7 +2028,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Blacky Moore Community Centre':
@@ -2043,7 +2044,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'CCW4 Cunnington Street':
@@ -2059,7 +2060,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Abshot Community Centre':
@@ -2075,7 +2076,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Holy Trinity Church, Twickenham':
@@ -2091,7 +2092,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Martin\'s Church, West Acton':
@@ -2107,7 +2108,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Alverstoke Parish Centre':
@@ -2123,7 +2124,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Burnham Park Hall':
@@ -2139,7 +2140,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Peter\'s Church':
@@ -2155,7 +2156,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Dorridge Village Hall':
@@ -2171,7 +2172,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Heatherside Community Centre':
@@ -2187,7 +2188,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Lydney Community Centre':
@@ -2203,7 +2204,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Worle Baptist Church':
@@ -2219,7 +2220,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Peter\'s Community Hall and Gardens':
@@ -2235,7 +2236,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Thomas Church':
@@ -2251,7 +2252,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Grace Church Stirchley':
@@ -2267,7 +2268,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Nailsea Baptist Church':
@@ -2283,7 +2284,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Kennington Methodist Church':
@@ -2299,7 +2300,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Catherine\'s Church Centre':
@@ -2315,7 +2316,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Matthew\'s Church':
@@ -2331,7 +2332,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mary\'s Church, Hobs Moat':
@@ -2347,7 +2348,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Andrew\'s United Reform Church':
@@ -2363,7 +2364,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Atherley Bowls & Social Club':
@@ -2379,7 +2380,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Lovedean Village Hall':
@@ -2395,7 +2396,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Elmcroft Community Centre':
@@ -2411,7 +2412,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Dudley Wood Methodist Church':
@@ -2427,7 +2428,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Cradley Sports & Social Club':
@@ -2443,7 +2444,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Astral Park Sports & Community Centre':
@@ -2459,7 +2460,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Paul\'s Ruislip Manor':
@@ -2475,7 +2476,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Christ Church Kensington':
@@ -2491,7 +2492,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Nursling & Rownhams Village Hall':
@@ -2507,7 +2508,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Weoly Hill Village Hall':
@@ -2523,7 +2524,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Paul\'s Church, Dosthill':
@@ -2539,7 +2540,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Beansheaf Community Centre':
@@ -2555,7 +2556,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Parklands Community Centre':
@@ -2571,7 +2572,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Calcot Centre':
@@ -2587,7 +2588,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Centre Longwell Green':
@@ -2603,7 +2604,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Christ Church Hall':
@@ -2619,7 +2620,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Middleton Sports Club':
@@ -2635,7 +2636,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Chiswick Memorial Club':
@@ -2651,7 +2652,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Erconwald\'s Catholic Church':
@@ -2667,7 +2668,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Bishopstoke Methodist Church':
@@ -2683,7 +2684,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Haddenham Village Hall':
@@ -2699,7 +2700,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Hill View Community Centre':
@@ -2715,7 +2716,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Margaret of Antioch Church':
@@ -2731,7 +2732,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Little Aston Village Hall':
@@ -2747,7 +2748,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Old School House':
@@ -2763,7 +2764,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mary Magdalen Church':
@@ -2779,7 +2780,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Stockwood Free Church':
@@ -2795,7 +2796,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Folk Hall':
@@ -2811,7 +2812,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Fernie Fields Sports & Social Club':
@@ -2827,7 +2828,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(180,0,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St John Vianney Catholic Church':
@@ -2843,7 +2844,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Sherriff Centre':
@@ -2859,7 +2860,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Martin of Tours':
@@ -2875,7 +2876,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Chasetown Methodist Church':
@@ -2891,7 +2892,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Winyates Community Centre':
@@ -2907,7 +2908,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Clevedon Community Centre':
@@ -2923,7 +2924,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St John the Baptist Church Hall':
@@ -2939,7 +2940,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Margarets Parish Centre':
@@ -2955,7 +2956,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Bloxwich Golf Club':
@@ -2971,7 +2972,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Good Shepherd, Carshalton Beeches':
@@ -2987,7 +2988,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Thomas the Apostle Parish Hall':
@@ -3003,7 +3004,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'All Saints Parish Church Hall':
@@ -3019,7 +3020,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Lodge Farm Church':
@@ -3035,7 +3036,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Saviours C of E Church':
@@ -3051,7 +3052,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Clanfield Centre':
@@ -3067,7 +3068,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Francis de Sales':
@@ -3083,7 +3084,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Rhiwderin Community Centre':
@@ -3099,7 +3100,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Deverell Hall':
@@ -3115,7 +3116,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Lordswood Community Centre':
@@ -3131,7 +3132,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Shelfield Methodist Church':
@@ -3147,7 +3148,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Bernards Parish Centre':
@@ -3163,7 +3164,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Blaby & District Social Club':
@@ -3179,7 +3180,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Binfield Memorial Hall':
@@ -3195,7 +3196,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Hatch Warren Community Cenrte':
@@ -3211,7 +3212,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Willowhale Community CentreL':
@@ -3227,7 +3228,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Harvest Fields Centre':
@@ -3243,7 +3244,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Barnes Sports Club':
@@ -3259,7 +3260,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Marshalswick Community Centre':
@@ -3275,7 +3276,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Christ Church Centre':
@@ -3291,7 +3292,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Peter\'s Hall':
@@ -3307,7 +3308,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Hollyfields Sports & Conference Centre':
@@ -3323,7 +3324,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Manor at Coalpit Heath':
@@ -3339,7 +3340,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Falcon Lodge Methodist Church':
@@ -3355,7 +3356,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mary\'s Church Hall':
@@ -3371,7 +3372,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Claremont Free Church':
@@ -3387,7 +3388,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Peter\'s Church Hall':
@@ -3403,7 +3404,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Lukes Church Hall':
@@ -3419,7 +3420,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Chinnor Commuinty Centre':
@@ -3435,7 +3436,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Cloisters':
@@ -3451,7 +3452,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Buckingham Community Centre':
@@ -3467,7 +3468,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Coleshill Town Hall':
@@ -3483,7 +3484,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Beacon Church':
@@ -3499,7 +3500,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Keynsham Masonic Hall':
@@ -3515,7 +3516,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Monteagle Community Centre':
@@ -3531,7 +3532,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Broughton Astley Village Hall':
@@ -3547,7 +3548,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Dudley Golf Club':
@@ -3563,7 +3564,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Maidenhead Commuinty Centre':
@@ -3579,7 +3580,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The King\'s Centre':
@@ -3595,7 +3596,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Arden Hall':
@@ -3611,7 +3612,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Cheslyn Hay Community & Sports Club':
@@ -3627,7 +3628,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Wollaston Village Hall':
@@ -3643,7 +3644,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Judith Fields Recreation Centre':
@@ -3659,7 +3660,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Ashford Community Association':
@@ -3675,7 +3676,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Andrew\'s Church & Star Centre':
@@ -3691,7 +3692,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Francis Community Centre':
@@ -3707,7 +3708,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Lisvane Memorial Hall':
@@ -3723,7 +3724,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Hodge Hill Church':
@@ -3739,7 +3740,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Sedgley Community Centre':
@@ -3755,7 +3756,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Obelisk Centre':
@@ -3771,7 +3772,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Higham Ferrers Working Men\'s Club':
@@ -3787,7 +3788,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Dunstan\'s, East Acton':
@@ -3803,7 +3804,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Hucclecote Community Centre':
@@ -3819,7 +3820,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Matthew\'s Church Hall':
@@ -3835,7 +3836,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Jude\'s Community Hall':
@@ -3851,7 +3852,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Springs Church Gornal':
@@ -3867,7 +3868,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Wootton Community & Sports Centre':
@@ -3883,7 +3884,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Sanderstead United Reformed Church':
@@ -3899,7 +3900,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Norman Roadway Pvilion':
@@ -3915,7 +3916,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Albans United Reformed Church':
@@ -3931,7 +3932,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Gainsborough House Hotel':
@@ -3947,7 +3948,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Streetly Sports and Community Association':
@@ -3963,7 +3964,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Hilda\'s Warley Woods Hall':
@@ -3979,7 +3980,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Chapel Hall':
@@ -3995,7 +3996,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Francis of Assiss Church':
@@ -4011,7 +4012,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Joseph\'s Catholic Church':
@@ -4027,7 +4028,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mark\'s Church':
@@ -4043,7 +4044,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Our Lady of Fatima':
@@ -4059,7 +4060,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Wordsley Community Centre':
@@ -4075,7 +4076,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Short Heath Methodist Church':
@@ -4091,7 +4092,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mary\'s Centre':
@@ -4107,7 +4108,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Aidans Catholic Church':
@@ -4123,7 +4124,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Andrew\'s Church, Farlignton':
@@ -4139,7 +4140,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Kidderminster Baptist Church':
@@ -4155,7 +4156,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Walmley Golf Club':
@@ -4171,7 +4172,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Mary of the Angels Catholic Church':
@@ -4187,7 +4188,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Highfiel Church Centre':
@@ -4203,7 +4204,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Ickenham Village Hall':
@@ -4219,7 +4220,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Kingswinford Community Centre':
@@ -4235,7 +4236,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Pelsall Community & Arts Centre':
@@ -4251,7 +4252,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Warmley War Memorial and Community Hall':
@@ -4267,7 +4268,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The White Hut Community Hall':
@@ -4283,7 +4284,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Burton Latimer Community Centre':
@@ -4299,7 +4300,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'California Ratepayers Hall':
@@ -4315,7 +4316,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St John Fisher Church':
@@ -4331,7 +4332,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Nicholas Church Rooms':
@@ -4347,7 +4348,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Stephens Church':
@@ -4363,7 +4364,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Clements Church Hall':
@@ -4379,7 +4380,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Peter\'s Church Centre':
@@ -4395,7 +4396,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Muswell Hill Methodist Church':
@@ -4411,7 +4412,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St James Road Methodist Church':
@@ -4427,7 +4428,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Anne\'s Parish Hall':
@@ -4443,7 +4444,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St James Church Parish Centre':
@@ -4459,7 +4460,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Countesthorpe Village Hall':
@@ -4475,7 +4476,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Coventry Hearsall Golf Club':
@@ -4491,7 +4492,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Knightwood Leisure Centre':
@@ -4507,7 +4508,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Hazelwood Centre':
@@ -4523,7 +4524,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Harpenden Common Golf Club':
@@ -4539,7 +4540,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Kitson Hall':
@@ -4555,7 +4556,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Saviour\'s, Wendall Park':
@@ -4571,7 +4572,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Crofton Community Centre':
@@ -4587,7 +4588,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Chandler\'s Ford Methodist Church':
@@ -4603,7 +4604,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Pamber Heath War Memorial':
@@ -4619,7 +4620,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Vera Fletcher Hall':
@@ -4635,7 +4636,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Kingsdown Methodist Church':
@@ -4651,7 +4652,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Generation Centre':
@@ -4667,7 +4668,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Bernadette\'s Church':
@@ -4683,7 +4684,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Andrew\'s Church':
@@ -4699,7 +4700,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Bethany Baptist Church':
@@ -4715,7 +4716,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Ise Valley Pavilion':
@@ -4731,7 +4732,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St George\'s Church':
@@ -4747,7 +4748,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Nicholas\' Church':
@@ -4763,7 +4764,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Ashtead Peace Memorial':
@@ -4779,7 +4780,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Thomas Law Hall':
@@ -4795,7 +4796,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Church of the Resurrection':
@@ -4811,7 +4812,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Downend Folk House':
@@ -4827,7 +4828,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Staines & Laleham Sports Association':
@@ -4843,7 +4844,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Banstead Community Centre':
@@ -4859,7 +4860,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Helen\'s Church, North Kensington':
@@ -4875,7 +4876,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Welwyn Garden City Golf Club':
@@ -4891,7 +4892,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Robinswood Hill Social Club':
@@ -4907,7 +4908,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Olney Centre':
@@ -4923,7 +4924,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Nork Community Centre':
@@ -4939,7 +4940,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Colehill Village Hall':
@@ -4955,7 +4956,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Etheldread\'s Church':
@@ -4971,7 +4972,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Fleet URC Hall':
@@ -4987,7 +4988,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Ladygate Bowls Club':
@@ -5003,7 +5004,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Faith & St Laurence':
@@ -5019,7 +5020,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Our Lady of the Immaculate Conception Church':
@@ -5035,7 +5036,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Woodley Village Hall':
@@ -5051,7 +5052,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Drummond Community Centre':
@@ -5067,7 +5068,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Uxbridge Community Centre':
@@ -5083,7 +5084,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Nicholas Church':
@@ -5099,7 +5100,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Pinner Methodist Church':
@@ -5115,7 +5116,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Wootton Village Hall':
@@ -5131,7 +5132,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Bromham Village Hall':
@@ -5147,7 +5148,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Dudley Kingswinford Rugby Football Club':
@@ -5163,7 +5164,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Chads Parish Church':
@@ -5179,7 +5180,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,29,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'The Oakfield Community Centre':
@@ -5195,7 +5196,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Blunden Hall':
@@ -5211,7 +5212,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'All Saints Church':
@@ -5227,7 +5228,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Thomas More Church':
@@ -5243,7 +5244,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Peter\'s C of E Church':
@@ -5259,7 +5260,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(180,0,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Old Basing Village Hall':
@@ -5275,7 +5276,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Penylan Baptist Church':
@@ -5291,7 +5292,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St John\'s Church Hall':
@@ -5307,7 +5308,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'St Columba\'s C of E Church':
@@ -5323,7 +5324,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Sillhill Football Club':
@@ -5339,7 +5340,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Paxcroft Mead Community Centre':
@@ -5355,7 +5356,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Redcliffe Bay Hill':
@@ -5371,7 +5372,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Surbiton Racket & Fitness':
@@ -5387,7 +5388,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(244,255,0,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Emsworth Sports & Social Club':
@@ -5403,7 +5404,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'Upper Ettingshall Methodist Church':
@@ -5419,7 +5420,375 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
-                interactive: true,
+                interactive: false,
+            }
+                    break;
+                case 'Baginton URC Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'SVRA Community Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Nailsea Masonic Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Lower Penarth Community Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,29,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Up Hatherley Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'St Michael\'s Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Boley Park Community Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Polesworth Memorial Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Duston Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Felpham Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Kennet Free Valley Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Basingstoke Rugby Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'St George\'s Church, Tolworth':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'St Chad\'s & All Saints Parish Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,29,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Norton Social Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'St Luke\'s, Wimbledon':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Waterlooville Golf Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,29,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'The Dingle Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,29,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Salem Methodist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(180,0,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Highfield Hall Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Church of the Resurrection, Cosham':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Churchdown Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
+            }
+                    break;
+                case 'Pyrford Village War Memorial Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: false,
             }
                     break;
             }
@@ -5429,7 +5798,7 @@
         map.getPane('pane_Venue_web_5').style['mix-blend-mode'] = 'normal';
         var layer_Venue_web_5 = new L.geoJson(json_Venue_web_5, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_Venue_web_5',
             layerName: 'layer_Venue_web_5',
             pane: 'pane_Venue_web_5',
