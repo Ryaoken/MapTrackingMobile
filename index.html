@@ -50,7 +50,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[50.61686158870154,-4.132645126036067],[52.84284403118189,1.5300630589779767]]);
+        }).fitBounds([[50.658440686289715,-3.8055033028483285],[52.75753418167129,1.5316705631406735]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -246,7 +246,8 @@
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['deviceId'] !== null ? autolinker.link(String(feature.properties['deviceId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">deviceId</th>\
+                        <td>' + (feature.properties['deviceId'] !== null ? autolinker.link(String(feature.properties['deviceId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['deviceName'] !== null ? autolinker.link(String(feature.properties['deviceName']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -5790,6 +5791,22 @@
                 interactive: true,
             }
                     break;
+                case 'East Finchley Methodist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
                 case 'St Thomas Church, Aldridge':
                     return {
                 pane: 'pane_Venue_web_5',
@@ -5803,6 +5820,166 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Hedge End Club':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Mary the Virgin, Winnersh':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Ferndown Village Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Peter\'s Church, Dudley':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Stow Park Community Centre':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'All Saints Church, Sanderstead':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,255,0,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'St Martin\'s Church, Walsall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Lanesfield Methodist Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(180,0,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Whar Hall':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,234,255,0.8)',
+                interactive: true,
+            }
+                    break;
+                case 'Askew Road Church':
+                    return {
+                pane: 'pane_Venue_web_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,29,0,0.8)',
                 interactive: true,
             }
                     break;
@@ -5868,7 +6045,7 @@
                     }
                 }
         map.addControl(new L.Control.Search({
-            layer: layer_Venue_web_5,
+            layer: layer_Venue_web_6,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'Search Text'}));
