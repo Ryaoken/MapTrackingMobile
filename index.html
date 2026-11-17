@@ -37,9 +37,9 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/PurplePath_1.js"></script>
-        <script src="data/RedPath_2.js"></script>
-        <script src="data/YellowPath_3.js"></script>
+        <script src="data/Purple_1.js"></script>
+        <script src="data/Red_2.js"></script>
+        <script src="data/Yellow_3.js"></script>
         <script src="data/BluePath_4.js"></script>
         <script src="data/Venue_web_5.js"></script>
         <script>
@@ -50,7 +50,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[50.658440686289715,-3.8055033028483285],[52.75753418167129,1.5316705631406735]]);
+        }).fitBounds([[50.78691864677347,-3.7790023174778615],[52.91810171195488,1.657197540135628]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -146,7 +146,7 @@
         });
         layer_GoogleSatelliteView_0;
         map.addLayer(layer_GoogleSatelliteView_0);
-        function pop_PurplePath_1(feature, layer) {
+        function pop_Purple_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -165,9 +165,6 @@
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['deviceId'] !== null ? autolinker.link(String(feature.properties['deviceId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['deviceName'] !== null ? autolinker.link(String(feature.properties['deviceName']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['segmentId'] !== null ? autolinker.link(String(feature.properties['segmentId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -201,9 +198,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_PurplePath_1_0() {
+        function style_Purple_1_0() {
             return {
-                pane: 'pane_PurplePath_1',
+                pane: 'pane_Purple_1',
                 opacity: 1,
                 color: 'rgba(180,0,255,0.7)',
                 dashArray: '',
@@ -214,21 +211,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_PurplePath_1');
-        map.getPane('pane_PurplePath_1').style.zIndex = 401;
-        map.getPane('pane_PurplePath_1').style['mix-blend-mode'] = 'normal';
-        var layer_PurplePath_1 = new L.geoJson(json_PurplePath_1, {
+        map.createPane('pane_Purple_1');
+        map.getPane('pane_Purple_1').style.zIndex = 401;
+        map.getPane('pane_Purple_1').style['mix-blend-mode'] = 'normal';
+        var layer_Purple_1 = new L.geoJson(json_Purple_1, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_PurplePath_1',
-            layerName: 'layer_PurplePath_1',
-            pane: 'pane_PurplePath_1',
-            onEachFeature: pop_PurplePath_1,
-            style: style_PurplePath_1_0,
+            dataVar: 'json_Purple_1',
+            layerName: 'layer_Purple_1',
+            pane: 'pane_Purple_1',
+            onEachFeature: pop_Purple_1,
+            style: style_Purple_1_0,
         });
-        bounds_group.addLayer(layer_PurplePath_1);
-        map.addLayer(layer_PurplePath_1);
-        function pop_RedPath_2(feature, layer) {
+        bounds_group.addLayer(layer_Purple_1);
+        map.addLayer(layer_Purple_1);
+        function pop_Red_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -246,8 +243,7 @@
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">deviceId</th>\
-                        <td>' + (feature.properties['deviceId'] !== null ? autolinker.link(String(feature.properties['deviceId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['deviceId'] !== null ? autolinker.link(String(feature.properties['deviceId']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['deviceName'] !== null ? autolinker.link(String(feature.properties['deviceName']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -290,9 +286,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_RedPath_2_0() {
+        function style_Red_2_0() {
             return {
-                pane: 'pane_RedPath_2',
+                pane: 'pane_Red_2',
                 opacity: 1,
                 color: 'rgba(255,29,0,0.7)',
                 dashArray: '',
@@ -303,21 +299,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_RedPath_2');
-        map.getPane('pane_RedPath_2').style.zIndex = 402;
-        map.getPane('pane_RedPath_2').style['mix-blend-mode'] = 'normal';
-        var layer_RedPath_2 = new L.geoJson(json_RedPath_2, {
+        map.createPane('pane_Red_2');
+        map.getPane('pane_Red_2').style.zIndex = 402;
+        map.getPane('pane_Red_2').style['mix-blend-mode'] = 'normal';
+        var layer_Red_2 = new L.geoJson(json_Red_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_RedPath_2',
-            layerName: 'layer_RedPath_2',
-            pane: 'pane_RedPath_2',
-            onEachFeature: pop_RedPath_2,
-            style: style_RedPath_2_0,
+            dataVar: 'json_Red_2',
+            layerName: 'layer_Red_2',
+            pane: 'pane_Red_2',
+            onEachFeature: pop_Red_2,
+            style: style_Red_2_0,
         });
-        bounds_group.addLayer(layer_RedPath_2);
-        map.addLayer(layer_RedPath_2);
-        function pop_YellowPath_3(feature, layer) {
+        bounds_group.addLayer(layer_Red_2);
+        map.addLayer(layer_Red_2);
+        function pop_Yellow_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -378,9 +374,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_YellowPath_3_0() {
+        function style_Yellow_3_0() {
             return {
-                pane: 'pane_YellowPath_3',
+                pane: 'pane_Yellow_3',
                 opacity: 1,
                 color: 'rgba(244,255,0,0.7)',
                 dashArray: '',
@@ -391,20 +387,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_YellowPath_3');
-        map.getPane('pane_YellowPath_3').style.zIndex = 403;
-        map.getPane('pane_YellowPath_3').style['mix-blend-mode'] = 'normal';
-        var layer_YellowPath_3 = new L.geoJson(json_YellowPath_3, {
+        map.createPane('pane_Yellow_3');
+        map.getPane('pane_Yellow_3').style.zIndex = 403;
+        map.getPane('pane_Yellow_3').style['mix-blend-mode'] = 'normal';
+        var layer_Yellow_3 = new L.geoJson(json_Yellow_3, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_YellowPath_3',
-            layerName: 'layer_YellowPath_3',
-            pane: 'pane_YellowPath_3',
-            onEachFeature: pop_YellowPath_3,
-            style: style_YellowPath_3_0,
+            dataVar: 'json_Yellow_3',
+            layerName: 'layer_Yellow_3',
+            pane: 'pane_Yellow_3',
+            onEachFeature: pop_Yellow_3,
+            style: style_Yellow_3_0,
         });
-        bounds_group.addLayer(layer_YellowPath_3);
-        map.addLayer(layer_YellowPath_3);
+        bounds_group.addLayer(layer_Yellow_3);
+        map.addLayer(layer_Yellow_3);
         function pop_BluePath_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -6045,7 +6041,7 @@
                     }
                 }
         map.addControl(new L.Control.Search({
-            layer: layer_Venue_web_6,
+            layer: layer_Venue_web_5,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'Search Text'}));
